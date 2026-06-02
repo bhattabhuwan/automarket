@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "881287164458",
+    "project_id": "automarket619",
+    "storage_bucket": "automarket619.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881287164458:android:ed064864795bba61084953",
+        "android_client_info": {
+          "package_name": "com.example.automarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "881287164458-l59h9rpmtl2454bdj9t7nr7ntvr0jtv4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.automarket",
+            "certificate_hash": "8b8a909d8749459626a4489af88975e14352be04"
+          }
+        },
+        {
+          "client_id": "881287164458-kd2akuadnfr1elu5e84tqq0vmid24fi7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5NSiY76Nt_L-40SpGyUIy9cLc89eiIuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "881287164458-kd2akuadnfr1elu5e84tqq0vmid24fi7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "881287164458-nfu70m29l11414vkcb5mln357068pt8g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.automarket"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
