@@ -1,6 +1,7 @@
 import 'package:automarket/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
+// Authentication screen for email/password and Google sign-in.
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
 
@@ -17,6 +18,7 @@ class _AuthScreenState extends State<AuthScreen> {
   bool _isLoading = false;
   String? _errorMessage;
 
+  // Handles email/password login and signup from the shared form.
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     setState(() {
@@ -36,6 +38,7 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
+  // Starts Google authentication and reports any sign-in errors.
   Future<void> _signInWithGoogle() async {
     setState(() {
       _isLoading = true;
@@ -50,6 +53,7 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
+  // Shows a reset-password dialog and sends the reset email.
   Future<void> _forgotPassword() async {
     final emailController = TextEditingController();
     showDialog(

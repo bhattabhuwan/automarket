@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "881287164458",
+    "firebase_url": "https://automarket619-default-rtdb.firebaseio.com",
     "project_id": "automarket619",
     "storage_bucket": "automarket619.firebasestorage.app"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "881287164458-l59h9rpmtl2454bdj9t7nr7ntvr0jtv4.apps.googleusercontent.com",
+          "client_id": "881287164458-tnbaq7bdeeblh49asbdko5e7ga8e7cqf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.automarket",
-            "certificate_hash": "8b8a909d8749459626a4489af88975e14352be04"
+            "certificate_hash": "3e77bc14a962d81aea69f3e359e461e9eacac04b"
           }
         },
         {

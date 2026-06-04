@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+// Small wrapper around Firebase Auth and Google Sign-In operations.
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -8,7 +9,7 @@ class AuthService {
   // Get current user
   User? get currentUser => _auth.currentUser;
 
-  // Email/Password Sign Up
+  // Creates a new Firebase account with email and password.
   Future<User?> signUpWithEmail(String email, String password) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
@@ -21,7 +22,7 @@ class AuthService {
     }
   }
 
-  // Email/Password Sign In
+  // Signs in an existing user with email and password.
   Future<User?> signInWithEmail(String email, String password) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
@@ -34,7 +35,7 @@ class AuthService {
     }
   }
 
-  // Google Sign In
+  // Completes Google OAuth and exchanges it for Firebase credentials.
   Future<User?> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();

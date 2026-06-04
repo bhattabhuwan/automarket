@@ -5,7 +5,7 @@ const admin = require("firebase-admin");
 
 admin.initializeApp();
 
-const NEW_DEVICE_TOPIC = "marketplace-new-devices";
+const ALL_USERS_TOPIC = "allUsers";
 
 exports.notifyNewMarketplaceDevice = onDocumentCreated(
   "listings/{listingId}",
@@ -26,41 +26,53 @@ exports.notifyNewMarketplaceDevice = onDocumentCreated(
       return;
     }
 
-    const listingTitle = readText(listing.title, "New marketplace device");
+    const listingTitle = readText(listing.title, "New product listing");
     const price = readText(listing.priceLabel, "");
     const location = readText(listing.location, "");
-    const body = [listingTitle, price, location].filter(Boolean).join(" • ") ||
-      "Tap to view the latest marketplace device.";
+    const marketplaceUrl = readText(listing.marketplaceUrl, "");
+    const body = [listingTitle, price, location].filter(Boolean).join(" - ") ||
+      "Tap to view the latest marketplace item.";
 
     await getMessaging().send({
-      topic: NEW_DEVICE_TOPIC,
+      topic: ALL_USERS_TOPIC,
       notification: {
-        title: "New device uploaded",
+        title: "New listing added",
         body,
       },
       data: {
-        type: "new_marketplace_device",
+        type: "new_listing",
+        title: "New listing added",
+        body,
         listingId: event.params.listingId,
+        marketplaceUrl,
       },
       android: {
         priority: "high",
         notification: {
+          channelId: "marketplace_listing_alerts",
           sound: "default",
           clickAction: "FLUTTER_NOTIFICATION_CLICK",
+          priority: "high",
+          defaultSound: true,
         },
       },
       apns: {
+        headers: {
+          "apns-priority": "10",
+          "apns-push-type": "alert",
+        },
         payload: {
           aps: {
             sound: "default",
+            badge: 1,
           },
         },
       },
     });
 
-    logger.info("Sent new marketplace device notification.", {
+    logger.info("Sent new marketplace listing notification.", {
       listingId: event.params.listingId,
-      topic: NEW_DEVICE_TOPIC,
+      topic: ALL_USERS_TOPIC,
     });
   },
 );

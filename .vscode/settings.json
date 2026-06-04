@@ -1,0 +1,12 @@
+{
+    "chat.hookFilesLocations": {
+        ".github/hooks": true,
+        ".claude/settings.local.json": true,
+        ".claude/settings.json": true,
+        "~/.copilot/hooks": true,
+        "~/.claude/settings.json": true,
+        ".agents/hooks": true
+    },
+    "chat.utilityModel": "aitk-foundry/Microsoft Foundry/(sanzeeprae-7830)bhupi",
+    "chat.utilitySmallModel": "aitk-foundry/Microsoft Foundry/(sanzeeprae-7830)bhupi"
+}
